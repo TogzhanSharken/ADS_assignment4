@@ -270,26 +270,6 @@ Additionally, DFS can spend a long time exploring unnecessary paths before reach
 
 ---
 
-## Screenshots
-
-### Graph Structure Output
-![Graph Structure](docs/screenshots/img.png)
-
-### BFS and DFS Traversal Output
-![Traversal Output](docs/screenshots/img_1.png)
-
----
-
-## Limitations of DFS
-
-DFS may:
-
-- Use deep recursion
-- Cause stack overflow on very large graphs
-- Not guarantee shortest path
-
----
-
 ## BFS and DFS Traversal Output, Performance Results
 
 ![img_2.png](img_2.png)
@@ -308,10 +288,6 @@ One challenge during implementation was managing visited vertices correctly to a
 
 Overall, this project helped me better understand graph structures, traversal algorithms, and performance analysis.
 
-This project helped me better understand graph traversal algorithms and graph representation using adjacency lists. I learned how BFS and DFS work internally and how different data structures such as queues and recursion affect traversal behavior.
-
-One of the main differences between BFS and DFS is their traversal strategy. BFS explores vertices level by level and is useful for finding the shortest path, while DFS explores deeply along one branch before backtracking. During implementation, one challenge was correctly managing visited vertices to avoid infinite loops and repeated traversal.
-
 ---
 
 # Technologies Used
@@ -327,7 +303,7 @@ One of the main differences between BFS and DFS is their traversal strategy. BFS
 # Repository Structure
 
 ```text
-assignment3-graphs/
+assignment4-graphs/
 ├── src/
 │   ├── Vertex.java
 │   ├── Edge.java
@@ -345,11 +321,6 @@ assignment3-graphs/
 # Conclusion
 
 This project successfully implemented graph traversal algorithms using adjacency list representation.
-
 The experiments demonstrated that both BFS and DFS operate efficiently with time complexity O(V + E).
-
 The project also showed practical differences between traversal methods and their applications in real-world systems.
-
-The experiments demonstrated that both BFS and DFS perform efficiently on graphs of different sizes. The results generally matched the expected time complexity of O(V + E). BFS was more suitable for shortest-path style traversal, while DFS was useful for deep exploration of graph branches.
-
 Overall, this assignment improved understanding of graph algorithms, adjacency list structures, and performance analysis in Java.
