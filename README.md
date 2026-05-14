@@ -2,7 +2,7 @@
 
 ## Student Information
 
-- Name: YOUR_NAME
+- Name: Togzhan Sharken 
 - Course: Algorithms and Data Structures
 - Assignment: Assignment 4
 - Topic: Graph Traversal and Representation System
@@ -261,6 +261,25 @@ BFS is preferred when:
 
 ---
 
+## What are the limitations of DFS?
+
+Depth-First Search has several limitations.
+DFS does not guarantee the shortest path between vertices because it explores one branch deeply before checking others.
+In very large graphs, recursive DFS may also cause stack overflow due to deep recursion.
+Additionally, DFS can spend a long time exploring unnecessary paths before reaching the target vertex.
+
+---
+
+## Screenshots
+
+### Graph Structure Output
+![Graph Structure](docs/screenshots/img.png)
+
+### BFS and DFS Traversal Output
+![Traversal Output](docs/screenshots/img_1.png)
+
+---
+
 ## Limitations of DFS
 
 DFS may:
@@ -271,29 +290,9 @@ DFS may:
 
 ---
 
-# Screenshots
+## BFS and DFS Traversal Output, Performance Results
 
-## Graph Structure Output
-
-(Add screenshot here)
-
----
-
-## BFS Traversal Output
-
-(Add screenshot here)
-
----
-
-## DFS Traversal Output
-
-(Add screenshot here)
-
----
-
-## Performance Results
-
-(Add screenshot here)
+![img_2.png](img_2.png)
 
 ---
 
@@ -308,6 +307,10 @@ One important difference between BFS and DFS is the traversal strategy. BFS expl
 One challenge during implementation was managing visited vertices correctly to avoid infinite traversal loops.
 
 Overall, this project helped me better understand graph structures, traversal algorithms, and performance analysis.
+
+This project helped me better understand graph traversal algorithms and graph representation using adjacency lists. I learned how BFS and DFS work internally and how different data structures such as queues and recursion affect traversal behavior.
+
+One of the main differences between BFS and DFS is their traversal strategy. BFS explores vertices level by level and is useful for finding the shortest path, while DFS explores deeply along one branch before backtracking. During implementation, one challenge was correctly managing visited vertices to avoid infinite loops and repeated traversal.
 
 ---
 
@@ -338,25 +341,6 @@ assignment3-graphs/
 └── .gitignore
 ```
 
----
-
-# Git Commit History
-
-Example commits:
-
-```text
-init: project structure
-feat(vertex): implemented Vertex class
-feat(edge): added Edge class
-feat(graph): implemented adjacency list
-feat(traversal): added BFS and DFS
-feat(experiment): added performance testing
-docs(readme): added analysis and results
-perf(cleanup): improved code
-release: v1.0
-```
-
----
 
 # Conclusion
 
@@ -365,3 +349,7 @@ This project successfully implemented graph traversal algorithms using adjacency
 The experiments demonstrated that both BFS and DFS operate efficiently with time complexity O(V + E).
 
 The project also showed practical differences between traversal methods and their applications in real-world systems.
+
+The experiments demonstrated that both BFS and DFS perform efficiently on graphs of different sizes. The results generally matched the expected time complexity of O(V + E). BFS was more suitable for shortest-path style traversal, while DFS was useful for deep exploration of graph branches.
+
+Overall, this assignment improved understanding of graph algorithms, adjacency list structures, and performance analysis in Java.
