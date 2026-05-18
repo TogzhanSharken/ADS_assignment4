@@ -204,9 +204,9 @@ The program was tested on graphs of different sizes.
 
 | Graph Size | BFS Time (ns) | DFS Time (ns) |
 |------------|---------------|---------------|
-| 10 vertices | 152300 | 130500 |
-| 30 vertices | 245800 | 210400 |
-| 100 vertices | 630900 | 571200 |
+| 10 vertices | 843042        | 106958        |
+| 30 vertices | 234541        | 423708        |
+| 100 vertices | 550459        | 901500        |
 
 ---
 
