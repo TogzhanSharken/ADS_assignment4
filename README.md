@@ -6,6 +6,176 @@
 - Course: Algorithms and Data Structures
 - Assignment: Assignment 4
 - Topic: Graph Traversal and Representation System
+ 
+
+---
+
+
+# Bonus Task — Dijkstra’s Algorithm
+
+## Overview
+
+The goal of the Dijkstra's algorithm is to find the minimum distance from one starting vertex to all other vertices in the graph.  The implementation was written using adjacency lists, arrays and loops without using a Priority Queue.
+
+---
+
+# Graph Structure
+
+The graph stores:
+
+- vertices
+- weighted edges
+- adjacency lists
+
+The `Edge` class was modified by adding a `weight` field.
+
+```java
+private Vertex source;
+private Vertex destination;
+private int weight;
+```
+
+Graph output:
+
+```text
+===== GRAPH STRUCTURE =====
+0 -> 1(9) 2(9) 
+1 -> 2(4) 3(9) 
+2 -> 3(6) 4(9) 
+3 -> 4(5) 5(4) 
+4 -> 5(2) 6(4) 
+5 -> 6(7) 7(7) 
+6 -> 7(7) 8(3) 
+7 -> 8(9) 9(2) 
+8 -> 9(4) 
+9 -> 
+```
+
+The number in parentheses represents the edge weight.
+
+---
+
+# How the Algorithm Works
+
+The algorithm starts from a selected vertex.
+
+Initial setup:
+
+- distance to the starting vertex = `0`
+- distance to all other vertices = `Infinity`
+- all vertices are marked as unvisited
+
+Example:
+
+```java
+Starting Vertex: 0
+```
+![img_3.png](img_3.png)
+
+A `visited` array is used to track processed vertices.
+
+```java
+boolean[] visited = new boolean[size];
+```
+
+At every iteration the algorithm:
+
+1. Finds the closest unvisited vertex
+2. Marks it as visited
+3. Updates distances to neighboring vertices
+4. Repeats until all vertices are processed
+
+Main relaxation step:
+
+```java
+
+if (!visited[neighbor]
+        && distances[currentVertex] != Integer.MAX_VALUE
+                        && distances[currentVertex] + weight < distances[neighbor]) {
+
+distances[neighbor] = distances[currentVertex] + weight;
+```
+
+This step checks whether a shorter path was found through the current vertex.
+
+---
+
+# Example Output
+
+## Graph with 10 Vertices
+Screenshot:
+
+![img_5.png](img_5.png)
+
+The output shows the minimum distance from vertex `0` to every other vertex.
+
+## Graph with 30 Vertices
+Screenshot:
+
+![img_6.png](img_6.png)
+
+
+## Graph with 100 Vertices
+Screenshot:
+
+![img_7.png](img_7.png)
+![img_8.png](img_8.png)
+![img_9.png](img_9.png)
+---
+
+# Performance Analysis
+
+The program was tested on graphs with:
+
+- 10 vertices
+- 30 vertices
+- 100 vertices
+
+## Execution Time — 10 Vertices
+![img_10.png](img_10.png)
+
+## Execution Time — 30 Vertices
+![img_11.png](img_11.png)
+
+## Execution Time — 100 Vertices
+![img_12.png](img_12.png)
+
+Dijkstra’s Algorithm requires more processing because it constantly searches for the minimum distance and updates paths between vertices.
+
+---
+
+# Time Complexity
+
+Since the implementation does not use a Priority Queue, the time complexity is:
+
+```text
+O(V²)
+```
+
+Where:
+
+- `V` = number of vertices
+
+The algorithm repeatedly scans all vertices to find the smallest unvisited distance.
+
+---
+
+# Conclusion
+
+The bonus task successfully implemented Dijkstra’s shortest path algorithm for weighted graphs.
+
+The implementation included:
+
+- weighted edges
+- adjacency lists
+- distance tracking
+- visited vertex tracking
+- shortest path relaxation
+
+The algorithm correctly computed shortest distances for graphs with 10, 30, and 100 vertices.
+
+This project provided practical experience with weighted graph processing, shortest path algorithms, and performance analysis in Java.
+
 
 ---
 
@@ -60,6 +230,8 @@ Example:
 0 -> 1 2
 1 -> 2 3
 2 -> 3 4
+
+
 ```
 
 Advantages of adjacency list:

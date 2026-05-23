@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Experiment {
 
     public void runTraversals(Graph g) {
@@ -6,54 +8,42 @@ public class Experiment {
         System.out.println("Graph with " + g.getVertexCount() + " vertices");
         System.out.println("=================================");
 
-        if (g.getVertexCount() == 10) {
+        long bfsStart = System.nanoTime();
 
-            long bfsStart = System.nanoTime();
+        g.bfs(0);
 
-            g.bfs(0);
+        long bfsEnd = System.nanoTime();
 
-            long bfsEnd = System.nanoTime();
+        long dfsStart = System.nanoTime();
 
-            long dfsStart = System.nanoTime();
+        g.dfs(0);
 
-            g.dfs(0);
+        long dfsEnd = System.nanoTime();
 
-            long dfsEnd = System.nanoTime();
+        long dijkstraStart = System.nanoTime();
 
-            printResults(
-                    bfsEnd - bfsStart,
-                    dfsEnd - dfsStart
-            );
-        }
+        g.dijkstra(0);
 
-        else {
+        long dijkstraEnd = System.nanoTime();
 
-            long bfsStart = System.nanoTime();
-
-            g.bfs(0);
-
-            long bfsEnd = System.nanoTime();
-
-            long dfsStart = System.nanoTime();
-
-            g.dfs(0);
-
-            long dfsEnd = System.nanoTime();
-
-            printResults(
-                    bfsEnd - bfsStart,
-                    dfsEnd - dfsStart
-            );
-        }
+        printResults(
+                bfsEnd - bfsStart,
+                dfsEnd - dfsStart,
+                dijkstraEnd - dijkstraStart
+        );
     }
 
-    public void printResults(long bfsTime, long dfsTime) {
+    public void printResults(long bfsTime,
+                             long dfsTime,
+                             long dijkstraTime) {
 
         System.out.println("\n===== EXECUTION TIME =====");
 
         System.out.println("BFS Time: " + bfsTime + " ns");
 
         System.out.println("DFS Time: " + dfsTime + " ns");
+
+        System.out.println("Dijkstra Time: " + dijkstraTime + " ns");
     }
 
     public void runMultipleTests() {
@@ -77,6 +67,8 @@ public class Experiment {
 
         Graph graph = new Graph();
 
+        Random random = new Random();
+
         for (int i = 0; i < size; i++) {
 
             graph.addVertex(new Vertex(i));
@@ -84,16 +76,13 @@ public class Experiment {
 
         for (int i = 0; i < size - 1; i++) {
 
-            graph.addEdge(i, i + 1);
-
+            graph.addEdge(i, i + 1, random.nextInt(9) + 1);
             if (i + 2 < size) {
 
-                graph.addEdge(i, i + 2);
+                graph.addEdge(i, i + 2, random.nextInt(9) + 1);
             }
         }
 
         return graph;
     }
 }
-
-
