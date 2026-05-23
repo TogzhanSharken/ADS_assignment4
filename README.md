@@ -15,7 +15,20 @@
 
 ## Overview
 
-The goal of the Dijkstra's algorithm is to find the minimum distance from one starting vertex to all other vertices in the graph.  The implementation was written using adjacency lists, arrays and loops without using a Priority Queue.
+I upgraded edge, experiment, graph for bonus task. The goal of the Dijkstra's algorithm is to find the minimum distance from one starting vertex to all other vertices in the graph.  The implementation was written using adjacency lists, arrays and loops without using a Priority Queue.
+
+---
+
+## Dijkstra's algorithm
+When the algorithm finds the shortest path between two nodes, that node is tagged as
+"visited" and added to the path
+The method is repeated until the path contains all the nodes in the graph
+Only graphs with positive weights can be used by Dijkstra's Algorithm. This is because the weights of the edges must be added
+---
+
+## Weighted edges
+
+Weighted edges were added by extending the `Edge` class with a `weight` field and updating the graph structure to support weighted connections. Dijkstra’s algorithm was implemented to calculate the shortest distance from a selected starting vertex to all other vertices in the graph. 
 
 ---
 
